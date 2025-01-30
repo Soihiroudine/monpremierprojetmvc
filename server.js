@@ -2,7 +2,7 @@
 const http = require("http");
 
 // On importe le fichier app.js
-const app = require("./controleur/app.js");
+const app = require("./app.js");
 
 // On créer un port avec pour valeur 3002
 const PORT = 3002;

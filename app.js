@@ -1,15 +1,14 @@
 // On import le framework express
 const express = require("express");
 
-// le module permet de manipuler des fichier
-const fs = require("fs");
-
 // On créer l'application expressJs avec : app
 const app = express();
 
 // Engine
-app.set("views", "./vue");
+app.set("views", "./views");
 app.set("view engine", "ejs");
+
+app.use(express.static("public"));
 
 // route [ Racine ]
 app.get("/", (req, res) => {
@@ -19,9 +18,18 @@ app.get("/", (req, res) => {
     res.end();
 });
 
-// route acceuil
-app.get("/acceuil", (req, res) => {
-    res.render("acceuil");
+// route apropos
+app.get("/apropos", (req, res) => {
+    res.render("apropos");
+});
+
+
+app.get("/formulaireProgrammeTv", (req, res) => {
+    res.render("formulaireProgrammeTv");
+});
+
+app.get("/programmeTv", (req, res) => {
+    res.render("programmeTv");
 });
 
 // On exporter l'application

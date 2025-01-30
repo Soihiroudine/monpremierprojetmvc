@@ -1,0 +1,25 @@
+
+nav {
+    background-color: #112456;
+    
+    font-size: 1.2em;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    padding: 0.7em 1.4em;
+}
+
+nav a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+nav a:hover {
+    color: burlywood;
+}

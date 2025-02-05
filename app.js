@@ -1,5 +1,6 @@
 // On import le framework express
 const express = require("express");
+require('dotenv').config(); // on va vouloir acceder a notre fichier .env
 
 // On créer l'application expressJs avec : app
 const app = express();
@@ -9,27 +10,27 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 
 // route [ Racine ]
 app.get("/", (req, res) => {
-    res.writeHead(200, {'Content-Type' : 'text/html;charset=utf-8'});
-    res.write("<b>Mon serveur est lancé depuis le village d'Acoua.</b>");
-    console.log("Je viens de me mettre dans la racine !");
-    res.end();
+    res.redirect("/apropos");
 });
 
 // route apropos
-app.get("/apropos", (req, res) => {
-    res.render("apropos");
-});
+app.use("/", require("./server/routes/routeaprorpos"));
 
+// route formulaireProgrammeTv
+app.use("/", require("./server/routes/routeformprogramme"));
 
-app.get("/formulaireProgrammeTv", (req, res) => {
-    res.render("formulaireProgrammeTv");
-});
+// route programmeTv
+app.use("/", require("./server/routes/routeprogrammetv"));
 
-app.get("/programmeTv", (req, res) => {
-    res.render("programmeTv");
+// Toutes les routes qui n'existe pas on la page d'erreur
+app.get("*", (req, res) => {
+    res.status(404).render("404");
 });
 
 // On exporter l'application

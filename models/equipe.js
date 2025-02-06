@@ -1,50 +1,7 @@
-/**
- * Equipe
- * @class Equipe
- * @property {number} id - Identifiant de l'équipe
- * @property {string} name - Nom de l'équipe
- * @property {Array<Membre>} membres - Liste des membres de l'équipe
- * @property {Array<ProgrammeTV>} programmes - Liste des programmes de l'équipe
- * @method getId - Retourne l'identifiant de l'équipe
- * @method getName - Retourne le nom de l'équipe
- * @method getMembres - Retourne la liste des membres de l'équipe
- * @method getProgrammes - Retourne la liste des programmes de l'équipe
- * @method setId - Modifie l'identifiant de l'équipe
- * @method setName - Modifie le nom de l'équipe
- * @method setMembres - Modifie la liste des membres de l'équipe
- * @method addMembre - Ajoute un membre à l'équipe
- * @method removeMembre - Supprime un membre de l'équipe
- * @method getMembreById - Retourne un membre de l'équipe par son identifiant
- * @method getMembreByName - Retourne un membre de l'équipe par son nom
- * @method getMembreByPrenom - Retourne un membre de l'équipe par son prénom    
- * @method getMembreByTravail - Retourne un membre de l'équipe par son travail
- * @method setProgrammes - Modifie la liste des programmes de l'équipe
- * @method addProgramme - Ajoute un programme à l'équipe
- * @method removeProgramme - Supprime un programme de l'équipe
- * @method getProgrammeById - Retourne un programme de l'équipe par son identifiant
- * @method getProgrammeByName - Retourne un programme de l'équipe par son nom
- * @example
- * let equipe = new Equipe(1, 'Equipe 1');
- * equipe.getId(); // 1
- * equipe.getName(); // 'Equipe 1'
- * equipe.getMembres(); // []
- * equipe.getProgrammes(); // []
- * equipe.setId(2);
- * equipe.setName('Equipe 2');
- * equipe.setMembres([membre1, membre2]);
- * equipe.addMembre(membre3);
- * equipe.removeMembre(membre1);
- * equipe.getMembreById(1);
- * equipe.getMembreByName('Membre 1');
- * equipe.getMembreByPrenom('Prenom 1');
- * equipe.getMembreByTravail('Travail 1');
- * equipe.setProgrammes([programme1, programme2]);
- * equipe.addProgramme(programme3);
- * equipe.removeProgramme(programme1);
- * equipe.getProgrammeById(1);
- * equipe.getProgrammeByName('Programme 1');
- * 
- */
+
+import { Membre } from "./membre.js"
+import { ProgrammeTv } from "./programmetv.js";
+
 class Equipe{
     constructor(id, name){
         this.id = id;
@@ -55,46 +12,28 @@ class Equipe{
 
     // Ajout des méthodes get
 
-    /**
-     * @returns {number} id
-     */
     getId(){
         return this.id;
     }
 
-    /**
-     * @returns {string} name
-     */
-    getName(){
+    getNom(){
         return this.nome;
     }
 
-    /**
-     * @returns {Array<Membre>} membres
-    */
     getMembres(){
         return this.membres;
     }
 
-    /**
-     * @returns {Array<ProgrammeTV>} programmes
-    */
     getProgrammes(){
         return this.programmes;
     }
 
     // Ajout des méthodes set
 
-    /**
-     * @param {number} id
-     */
     setId(id){
         this.id = id;
     }
 
-    /**
-     * @param {string} name
-    */
     setName(name){
         this.nome = name;
     }
@@ -108,58 +47,57 @@ class Equipe{
         this.membres = membres;
     }
 
-    /**
-     * @param {int} idmembre 
-     */
-    addMembre(idmembre){
-        this.membres.push(idmembre);
+    addMembre(nomMembre, prenomMembre, travailMembre){
+        let idMembre = this.membres.length + 1;
+        while(this.getMembreById(idMembre) !== undefined) {
+            idMembre++;
+        }
+        const nouveauMembre = new Membre(idMembre, nomMembre, prenomMembre, travailMembre);
+        return this.membres.push(nouveauMembre);
     }
 
     /**
-     * @param {int} idmembre 
+     * @param {string} nomMembre 
      */
-    removeMembre(idmembre){
-        this.membres = this.membres.filter(m => m.getId() !== idmembre);
+    removeMembre(idMembre){
+        return this.membres = this.membres.filter(membre => membre.getId() !== idMembre);
     }
 
     /**
      * @param {int} id 
      * @returns idmembre
      */
-    getMembreById(id){
-        return this.membres.find(m => m.getId() === id);
+    getMembreById(idMembre){
+        return this.membres.find(membre => membre.getId() === idMembre);
     }
 
     // Ajout des méthodes pour les programmes
 
     /**
-     * @param {Array<ProgrammeTV>} programmes 
+     * @param {Array<this.programmes>} programmes 
      */
     setProgrammes(programmes){
         this.programmes = programmes;
     }
 
-    /**
-     * @param {int} idprogramme 
-     */
-    addProgramme(idprogramme){
-        this.programmes.push(idprogramme);
+    //TODO - regarder la dateProgramme * type date (annee/mois/jour)
+    //TODO - regarder heureProgramme * type date.getHours() et minute
+    addProgramme(nomProgramme, desProgramme, dateProgramme, heureProgramme){
+        let idProgramme = this.programmes.length + 1;
+        while(this.getProgrammeById(idProgramme) !== undefined) {
+            idProgramme++;
+        }
+        const nouveauProgramme = new ProgrammeTv(idProgramme, nomProgramme, desProgramme, dateProgramme, heureProgramme);
+        this.programmes.push(nouveauProgramme);
     }
 
-    /**
-     * @param {int} idprogramme 
-     */
     removeProgramme(idprogramme){
-        this.programmes = this.programmes.filter(p => p.getId() !== idprogramme);
+        return this.programmes = this.programmes.filter(programme => programme.getId() !== idprogramme);
     }
 
-    /**
-     * @param {int} id 
-     * @returns idprogramme
-     */
-    getProgrammeById(id){
-        return this.programmes.find(p => p.getId() === id);
+    getProgrammeById(idprogramme){
+        return this.programmes.find(programme => programme.getId() === idprogramme);
     }
-
-    
 }
+
+export { Equipe };

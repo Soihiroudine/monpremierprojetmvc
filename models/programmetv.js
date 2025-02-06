@@ -1,35 +1,3 @@
-/**
- * ProgrammeTv
- * @class ProgrammeTv
- * @constructor
- * @param {number} id - The id of the programme
- * @param {string} name - The name of the programme
- * @param {string} description - The description of the programme
- * @param {string} dateDiffusion - The date of diffusion of the programme
- * @param {string} heureDebut - The start time of the programme
- * @method getId - Get the id of the programme
- * @method getName - Get the name of the programme
- * @method getDescription - Get the description of the programme
- * @method getDateDiffusion - Get the date of diffusion of the programme
- * @method getHeureDebut - Get the start time of the programme
- * @method setId - Set the id of the programme
- * @method setName - Set the name of the programme
- * @method setDescription - Set the description of the programme
- * @method setDateDiffusion - Set the date of diffusion of the programme
- * @method setHeureDebut - Set the start time of the programme
- * @example
- * let programme = new ProgrammeTv(1, 'Programme 1', 'Description 1', '2021-01-01', '20:00');
- * programme.getId(); // 1
- * programme.getName(); // 'Programme 1'
- * programme.getDescription(); // 'Description 1'
- * programme.getDateDiffusion(); // '2021-01-01'
- * programme.getHeureDebut(); // '20:00'
- * programme.setId(2);
- * programme.setName('Programme 2');
- * programme.setDescription('Description 2');
- * programme.setDateDiffusion('2021-01-02');
- * programme.setHeureDebut('21:00');
- */
 
 class ProgrammeTv{
     constructor(id, name, description, dateDiffusion, heureDebut){
@@ -112,3 +80,5 @@ class ProgrammeTv{
         this.heureDebut = heureDebut;
     }
 }
+
+export { ProgrammeTv };

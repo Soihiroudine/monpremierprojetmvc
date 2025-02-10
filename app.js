@@ -20,6 +20,7 @@ app.set("view engine", "ejs");
 app.use(layouts);
 app.set("layout", "./layout/main");
 
+// Acces au fichier du projet - css, image
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

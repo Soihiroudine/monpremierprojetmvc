@@ -7,7 +7,31 @@
 </head>
 <body>
     <%- include("navbar") %>
-        
+        <main>
+            <section id="afficheProgramme">
+                <table class="table">
+                    <caption>Programme TV</caption>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOM</th>
+                        <th>DESCRIPTION</th>
+                        <th>DATE DIFFUSION</th>
+                        <th>HEURE DiFFUSION</th>
+                    </tr>
+    
+                    <% programme.forEach(element => { %>
+                    <tr>
+                        <td><%= element.id %></td>
+                        <td><%= element.nom %></td>
+                        <td><%= element.description %></td>
+                        <td><%= element.date_diffusion %></td>
+                        <td><%= element.heure_diffusion %></td>
+                    </tr>
+                <% }); %>
+    
+                </table>
+            </section>
+        </main>
     <%- include("footer") %>
 </body>
 </html>

@@ -1,39 +1,28 @@
+const db = require("../server/config/db");
 
 class Membre {
-    constructor(id, nom, prenom, travail) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.travail = travail;
+    constructor() {}
+
+    addMembre(nom, prenom, travail, callback) {
+        db.query(
+            "INSERT INTO membre(nom, prenom, travail) VALUES (?, ?, ?);", 
+            [nom, prenom, travail],
+            (err, res) =>{
+                if (err){
+                    return callback(err, null);
+                }
+                callback(null, res);
+        });
     }
 
-    getId() {
-        return this.id;
-    }
-
-    getNom() {
-        return this.nom;
-    }
-
-    getPrenom() {
-        return this.prenom;
-    }
-
-    getTravail() {
-        return this.travail;
-    }
-
-    setNom(nom) {
-        this.nom = nom;
-    }
-
-    setPrenom(prenom) { 
-        this.prenom = prenom; 
-    }
-
-    setTravail(travail) {
-        this.travail = travail;
+    getMembres(callback){
+        db.query("SELECT * FROM membre;", (err, res) => {
+            if (err) {
+                return callback(err, null);
+            }
+            callback(null, res);
+        });
     }
 }
 
-export { Membre };
+module.exports = Membre;

@@ -15,7 +15,7 @@ class ProgrammeControl{
             if (err) {
                 return res.status(500).send('Erreur lors de l\'ajout');
             }
-            res.redirect("/formulaireProgrammeTv");
+            res.redirect("/programmeTV");
         });
     }
 

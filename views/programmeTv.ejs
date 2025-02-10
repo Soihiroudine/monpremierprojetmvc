@@ -1,37 +1,35 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programme TV</title>
-</head>
-<body>
-    <%- include("navbar") %>
-        <main>
-            <section id="afficheProgramme">
-                <table class="table">
-                    <caption>Programme TV</caption>
-                    <tr>
-                        <th>ID</th>
-                        <th>NOM</th>
-                        <th>DESCRIPTION</th>
-                        <th>DATE DIFFUSION</th>
-                        <th>HEURE DiFFUSION</th>
-                    </tr>
-    
-                    <% programme.forEach(element => { %>
-                    <tr>
-                        <td><%= element.id %></td>
-                        <td><%= element.nom %></td>
-                        <td><%= element.description %></td>
-                        <td><%= element.date_diffusion %></td>
-                        <td><%= element.heure_diffusion %></td>
-                    </tr>
+<main>
+    <section id="afficheProgramme">
+        <table class="table table-striped">
+            <caption>Programme TV</caption>
+            <tr>
+                <th>ID</th>
+                <th>NOM</th>
+                <th>DESCRIPTION</th>
+                <th>DATE DIFFUSION</th>
+                <th>HEURE DiFFUSION</th>
+            </tr>
+
+            <% programme.forEach(element=> { %>
+                <tr>
+                    <td>
+                        <%= element.id %>
+                    </td>
+                    <td>
+                        <%= element.nom %>
+                    </td>
+                    <td>
+                        <%= element.description %>
+                    </td>
+                    <td>
+                        <%= element.date_diffusion %>
+                    </td>
+                    <td>
+                        <%= element.heure_diffusion %>
+                    </td>
+                </tr>
                 <% }); %>
-    
-                </table>
-            </section>
-        </main>
-    <%- include("footer") %>
-</body>
-</html>
+
+        </table>
+    </section>
+</main>

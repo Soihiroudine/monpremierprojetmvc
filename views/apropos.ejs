@@ -1,36 +1,23 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A propos</title>
-    
-</head>
-<body>
-    <%- include("navbar") %>
-    <main>
-        <section id="membre">
-            <table class="table">
-                <caption>Membre TV</caption>
-                <tr>
-                    <th>ID</th>
-                    <th>NOM</th>
-                    <th>PRENOM</th>
-                    <th>TRAVAIL</th>
-                </tr>
+<main>
+    <section id="membre">
+        <table class="table table-striped">
+            <caption>Membre TV</caption>
+            <tr>
+                <th>ID</th>
+                <th>NOM</th>
+                <th>PRENOM</th>
+                <th>TRAVAIL</th>
+            </tr>
 
-                <% membre.forEach(element => { %>
+            <% membre.forEach(element=> { %>
                 <tr>
                     <td><%= element.id %></td>
                     <td><%= element.nom %></td>
                     <td><%= element.prenom %></td>
                     <td><%= element.travail %></td>
                 </tr>
-            <% }); %>
+                <% }); %>
 
-            </table>
-        </section>
-    </main>
-    <%- include("footer") %>
-</body>
-</html>
+        </table>
+    </section>
+</main>

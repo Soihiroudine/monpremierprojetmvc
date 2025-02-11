@@ -3,10 +3,10 @@ const db = require("../server/config/db");
 class Equipe{
     constructor(){}
 
-    addEquipe(id, nom, idMembre, idProgramme, callback) {
+    addEquipe(nom, idMembre, idProgramme, callback) {
         db.query(
-            "INSERT INTO equipe(id, nom, id_membre, id_programmetv) VALUES (?, ?, ?, ?);",
-            [id, nom, idMembre, idProgramme],
+            "INSERT INTO equipe(nom, id_membre, id_programmetv) VALUES (?, ?, ?, ?);",
+            [nom, idMembre, idProgramme],
             (err, res) => {
                 if (err) {
                     return callback(err, null);

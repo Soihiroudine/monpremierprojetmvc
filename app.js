@@ -2,6 +2,7 @@
 const express = require("express");
 require('dotenv').config(); // on va vouloir acceder a notre fichier .env
 const layouts = require("express-ejs-layouts"); 
+const session = require("express-session");
 
 // On créer l'application expressJs avec : app
 const app = express();
@@ -24,6 +25,20 @@ app.set("layout", "./layout/main");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+const sessionCle = process.env.SESSION_SECRET;
+
+// Express session
+app.use( session({
+    secret: sessionCle,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { 
+        secure: false, 
+        maxAge: 1000 * 60 * 30 //30 minutes 
+    }
+})
+);
 
 // route acceuil
 app.use("/", routeAcceuil);

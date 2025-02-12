@@ -1,23 +1,28 @@
-<main>
-    <section id="membre">
-        <table class="table table-striped">
-            <caption>Membre TV</caption>
+<section>
+    <table class="table table-hover">
+        <caption>Membre TV</caption>
+        <tr>
+            <th>ID</th>
+            <th>NOM</th>
+            <th>PRENOM</th>
+            <th>TRAVAIL</th>
+        </tr>
+
+        <% membre.forEach(element=> { %>
             <tr>
-                <th>ID</th>
-                <th>NOM</th>
-                <th>PRENOM</th>
-                <th>TRAVAIL</th>
+                <td>
+                    <%= element.id %>
+                </td>
+                <td>
+                    <%= element.nom %>
+                </td>
+                <td>
+                    <%= element.prenom %>
+                </td>
+                <td>
+                    <%= element.travail %>
+                </td>
             </tr>
-
-            <% membre.forEach(element=> { %>
-                <tr>
-                    <td><%= element.id %></td>
-                    <td><%= element.nom %></td>
-                    <td><%= element.prenom %></td>
-                    <td><%= element.travail %></td>
-                </tr>
-                <% }); %>
-
-        </table>
-    </section>
-</main>
+            <% }); %>
+    </table>
+</section>

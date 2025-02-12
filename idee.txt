@@ -1,0 +1,20 @@
+Pour le designe on va utiliser boostrap 5
+    - Il est deja telecharger 
+
+le home - 
+    utiliser un cover
+
+la nav - 
+    ...
+
+le footer - 
+    ...
+
+apropos -
+    ...
+
+programmetv - 
+    ...
+
+formulaireprogrammetv - 
+    ...

@@ -22,7 +22,7 @@ class ProgrammeControl{
     afficheProgrammes(req, res){
         this.programme.getProgrammes((err, programme) => {
             if (err) {
-                return res.status(500).send("Erreur lors de l'importation des information.")
+                return res.status(500).send("Erreur lors de l'importation des information.");
             }
             res.render("programmeTV", { programme });
         });

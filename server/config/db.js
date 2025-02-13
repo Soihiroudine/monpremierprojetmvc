@@ -2,7 +2,6 @@ const mysql = require("mysql2");
 
 require("dotenv").config();
 
-// const myConnection = require('express-myconnection');
 const connection = mysql.createConnection({
     host: process.env.host,
     user: process.env.user,

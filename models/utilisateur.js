@@ -4,10 +4,10 @@ class ComptUtilisateur {
     constructor() {}
 
     // Ajout de l'utilisateur dans la base de données
-    addUtilisateur(nom, prenom, email, password, date_naissance, callback) {
+    addUtilisateur(nom, prenom, email, date_naissance, password, callback) {
         db.query(
-            "INSERT INTO utilisateur(nom, prenom, email, password, date_naissance) VALUES (?, ?, ?, ?);",
-            [nom, prenom, email, password, date_naissance],
+            "INSERT INTO utilisateur(nom, prenom, email, date_naissance, password) VALUES (?, ?, ?, ?, ?);",
+            [nom, prenom, email, date_naissance, password],
             (err, res) => {
                 if(err) {
                     return callback(err, null);
@@ -17,7 +17,7 @@ class ComptUtilisateur {
     }
 
     // Récupération de l'utilisateur depuis la base de données en fonction de l'email et du mot de passe
-    getUtilisateur(email, callback) {
+    getEmailUtilisateur(email, callback) {
         db.query("SELECT * FROM utilisateur WHERE email = ?;", [email], (err, res) => {
             if (err) {
                 return callback(err, null);

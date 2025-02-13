@@ -13,6 +13,8 @@ const routeApropos = require("./server/routes/routeaprorpos");
 const routeFormProgramme = require("./server/routes/routeformprogramme");
 const routeProgrammeTv = require("./server/routes/routeprogrammetv");
 const routeErreur = require("./server/routes/routeErreur");
+const routeInscription = require("./server/routes/routeInscription");
+
 // Engine
 app.set("views", "./views");
 app.set("view engine", "ejs");
@@ -51,6 +53,9 @@ app.use("/", routeFormProgramme);
 
 // route programmeTv
 app.use("/", routeProgrammeTv);
+
+// route inscription
+app.use("/", routeInscription);
 
 // route pour les erreurs
 app.use("/", routeErreur);

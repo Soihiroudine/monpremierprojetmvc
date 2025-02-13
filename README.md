@@ -86,4 +86,15 @@ CREATE TABLE equipe (
     FOREIGN KEY (id_membre) membre(id),
     FOREIGN KEY (id_programmetv) programmetv(id)
 );
+
+CREATE TABLE utilisateur (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    date_naissance DATE NOT NULL,
+    password VARCHAR(155) NOT NULL
+);
+
+
 ```

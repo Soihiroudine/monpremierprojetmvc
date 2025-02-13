@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // route [ Racine ]
+// Redirige vers la page d'acceuil
 router.get("/", (req, res) => {
     res.redirect("/acceuil");
 });

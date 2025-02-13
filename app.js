@@ -14,6 +14,7 @@ const routeFormProgramme = require("./server/routes/routeformprogramme");
 const routeProgrammeTv = require("./server/routes/routeprogrammetv");
 const routeErreur = require("./server/routes/routeErreur");
 const routeInscription = require("./server/routes/routeInscription");
+const routeProfil = require("./server/routes/routeProfil");
 
 // Engine
 app.set("views", "./views");
@@ -31,15 +32,16 @@ app.use(express.json());
 const sessionCle = process.env.SESSION_SECRET;
 
 // Express session
-app.use( session({
-    secret: sessionCle,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { 
-        secure: false, 
-        maxAge: 1000 * 60 * 30 //30 minutes 
-    }
-})
+app.use( 
+    session({
+        secret: sessionCle,
+        resave: false,
+        saveUninitialized: true,
+        cookie: { 
+            secure: false, 
+            maxAge: 1000 * 60 * 30 //30 minutes 
+        }
+    })
 );
 
 // route acceuil
@@ -56,6 +58,9 @@ app.use("/", routeProgrammeTv);
 
 // route inscription
 app.use("/", routeInscription);
+
+// route profil
+app.use("/", routeProfil);
 
 // route pour les erreurs
 app.use("/", routeErreur);

@@ -5,6 +5,10 @@
             Dignissimos quisquam rem numquam fuga delectus saepe molestias debitis explicabo ipsam excepturi?
             A accusantium sunt excepturi amet quas repudiandae, perferendis odit ad?
         </p>
-        <a href="#" class="btn btn-lg btn-primary">Learn more</a>
+        <% if (user) { %>
+            <a href="/profil" class="btn btn-lg btn-primary">Profil</a>
+        <% } else { %> 
+            <a href="/connexion" class="btn btn-lg btn-primary">Connexion</a>
+        <% } %>
     </section>
 </section>

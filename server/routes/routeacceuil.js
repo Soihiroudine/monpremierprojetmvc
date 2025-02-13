@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/acceuil", (req, res) => {
-    res.render("acceuil");
+    res.render("acceuil", {user : req.session.user});
 });
 
 module.exports = router;

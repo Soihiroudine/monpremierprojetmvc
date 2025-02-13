@@ -3,6 +3,9 @@ const programmeControl = require('../../controls/programmeControl');
 const router = express.Router();
 
 router.get("/formulaireProgrammeTv", (req, res) => {
+    if (!req.session.user) {
+        res.redirect("/connexion");
+    }
     res.render("formulaireProgrammeTv");
 });
 

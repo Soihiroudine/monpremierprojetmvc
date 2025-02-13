@@ -9,6 +9,9 @@ router.get("/inscription", (req, res) => {
 router.post("/inscription", comptUserControls.creationUtilisateur.bind(comptUserControls));
 
 router.get("/connexion", (req, res) => {
+    if(req.session.user) {
+        return res.redirect("/profil");
+    }
     res.render("connexion");
 });
 

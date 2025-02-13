@@ -39,7 +39,13 @@ app.use(
         saveUninitialized: true,
         cookie: { 
             secure: false, 
+            // secure : false, // true = https
             maxAge: 1000 * 60 * 30 //30 minutes 
+            // La durée de vie de notre session en millisecondes
+            // maxAge : 
+                // 1000ms = 1 seconde
+                // 60s = 1 minute
+                // 30m = 1/2 heure
         }
     })
 );

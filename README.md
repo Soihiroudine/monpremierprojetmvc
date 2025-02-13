@@ -13,7 +13,7 @@
 
 ## ARCHITECTURE
 
-### Le projet utilise le modèle mvc 
+### Le projet utilise le modèle mvc
 
 - `controls`
 - `models`
@@ -43,6 +43,8 @@ monpremierprojetmvc/
 │   ├── config/
 │   └── routes/
 ├── .env
+├── app.js
+├── server.js
 ├── package.json
 └── README.md
 ```

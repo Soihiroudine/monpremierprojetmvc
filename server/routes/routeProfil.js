@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-
 // route [ Profil ]
 router.get("/profil", (req, res) => {
+    if (req.session.user) {
     res.render("profil", {user : req.session.user});
+    } else {
+        res.redirect("/connexion");
+    }
 });
 
 // Route pour détruire la session

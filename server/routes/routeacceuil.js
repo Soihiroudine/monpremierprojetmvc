@@ -7,12 +7,6 @@ router.get("/", (req, res) => {
     res.redirect("/acceuil");
 });
 
-
-
-// router.get("/acceuil", (req, res) => {
-//     res.render("acceuil", {user : req.session.user});
-// });
-
 router.get('/acceuil', (req, res) => {
     res.render('acceuil', {
         title: 'Acceuil',

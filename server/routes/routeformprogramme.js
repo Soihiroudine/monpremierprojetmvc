@@ -6,7 +6,7 @@ router.get("/formulaireProgrammeTv", (req, res) => {
     if (!req.session.user) {
         res.redirect("/connexion");
     }
-    res.render("formulaireProgrammeTv");
+    res.render("formulaireProgrammeTv", {title : "Formulaire Programme TV", user: req.session.user});
 });
 
 // La route que le formulaire de programmeTv va appeler pour créer un programme

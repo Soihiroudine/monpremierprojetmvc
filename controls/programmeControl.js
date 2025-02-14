@@ -26,7 +26,7 @@ class ProgrammeControl {
             if (err) {
                 return res.status(500).send("Erreur lors de l'importation des information.");
             }
-            res.render("programmeTV", { programme });
+            res.render("programmeTV", { programme, title : "Affiche programme", user: req.session.user });
         });
     }
 }

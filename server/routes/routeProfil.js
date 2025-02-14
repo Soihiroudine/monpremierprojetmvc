@@ -4,7 +4,7 @@ const router = express.Router();
 // route [ Profil ]
 router.get("/profil", (req, res) => {
     if (req.session.user) {
-    res.render("profil", {user : req.session.user});
+    res.render("profil", {title : "profil", user : req.session.user});
     } else {
         res.redirect("/connexion");
     }

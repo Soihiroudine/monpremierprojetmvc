@@ -1,6 +1,6 @@
 <header>
     
-    <h1 class="text-center"><%= locals.title %></h1>
+    <h1 class="text-center">Bond 13</h1>
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -11,7 +11,7 @@
             <li><a href="/programmeTV">Programme TV</a></li>
         </ul>
 
-        <% if (locals.user) { %>
+        <% if (user) { %>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/profil"><span class="glyphicon glyphicon-user"></span> <%= user.nom %></a></li>
                 <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>

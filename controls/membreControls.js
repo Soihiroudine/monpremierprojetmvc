@@ -11,7 +11,7 @@ class MembreControl{
                 console.log("Erreur lors de l'importation des information.");
                 return res.status(500).send("Erreur lors de l'importation des information.")
             }
-            res.render("apropos", { membre });
+            res.render("apropos", { membre, title : "Apropos", user: req.session.user });
         });
     }
 }

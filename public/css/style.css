@@ -3,19 +3,30 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 main {
-    padding: 20px;
-}
-
-table {
+    padding: 1.2em;
+    background-color: #fad7a0;
     border-radius: 5px;
 }
 
+body hr {
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+}
+
+table {
+    border-radius: 10px;
+}
+
 table tr th {
-    background-color: #352d2d;
+    background-color: #5b5562;
     border: 1px solid #ddd;
     color: #fff;
     padding: 8px;
     text-align: center;
+}
+
+table tr{
+    border: 1px solid #120125;
+    background-color: #ffffff;
 }

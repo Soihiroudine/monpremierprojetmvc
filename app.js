@@ -22,7 +22,18 @@ app.set("view engine", "ejs");
 
 // un layout
 app.use(layouts);
-app.set("layout", "./layout/main");
+const layout = app.set("layout", "./layout/main");
+
+app.use((req, res, next) => {
+    res.renderWithLayout = function(view, locals = {}) {
+      locals.body = locals.body || res.render(view, locals); // Rendre le contenu spécifique de la vue
+      locals.title = 'Bold 13'; // Passer un titre par défaut
+      locals.user = req.user || null; // Exemple de données globales (utilisateur connecté)
+      res.render(layout, locals); // Injecter dans le layout
+    };
+    next();
+});
+
 
 // Acces au fichier du projet - css, image
 app.use(express.static("public"));

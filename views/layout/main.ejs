@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <%- include("../partials/navbar") %>
+    <%- include("../partials/navbar", {locals : locals}) %>
     <main class="container-fluid">
         <%- body %>
     </main>
-    <%- include("../partials/footer") %>
+    <%- include("../partials/footer", {locals : locals}) %>
 </body>
 
 </html>

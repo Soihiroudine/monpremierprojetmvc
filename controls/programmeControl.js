@@ -9,11 +9,13 @@ class ProgrammeControl {
         const { nomProgramme, diffusion, heure_diffusion, description } = req.body;
 
         if (!nomProgramme || !description || !diffusion || !heure_diffusion) {
+            console.log("Tous les champs sont requis");
             return res.status(400).send('Tous les champs sont requis');
         }
 
         this.programme.addProgramme(nomProgramme, description, diffusion, heure_diffusion, (err) => {
             if (err) {
+                console.log("Erreur lors de l'ajout");
                 return res.status(500).send('Erreur lors de l\'ajout');
             }
             res.redirect("/programmeTV");
@@ -24,6 +26,7 @@ class ProgrammeControl {
     afficheProgrammes(req, res) {
         this.programme.getProgrammes((err, programme) => {
             if (err) {
+                console.log("Erreur lors de l'importation des information.");
                 return res.status(500).send("Erreur lors de l'importation des information.");
             }
             res.render("programmeTV", { programme, title : "Affiche programme", user: req.session.user });

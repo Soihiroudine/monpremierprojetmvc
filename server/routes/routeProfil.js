@@ -16,6 +16,7 @@ router.get('/logout', (req, res) => {
       if (err) {
         return res.send('Erreur lors de la déconnexion.');
       }
+      console.log("Déconnexion réussie");
       res.redirect("/connexion");
     });
 });

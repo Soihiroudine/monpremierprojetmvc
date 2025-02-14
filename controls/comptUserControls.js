@@ -28,6 +28,7 @@ class ComptUserControls{
 
         this.utilisateur.addUtilisateur(nom, prenom, email, dateNaissance, passwordHash,  (err) => {
             if (err) {
+                console.log("Erreur lors de l'ajout");
                 return res.status(500).send('Erreur lors de l\'ajout');
             }
             res.redirect("/connexion");
@@ -60,6 +61,8 @@ class ComptUserControls{
             }
 
             req.session.user = utilisateur[0];
+            console.log("L'utilsateur est connecté");
+            console.log("Connexion réussie");
             res.redirect("/profil");
         });
     }

@@ -1,8 +1,9 @@
 Pour le designe on va utiliser boostrap 5
     - Il est deja telecharger 
 
-le home - 
+le acceuil - 
     utiliser un cover
+    - Mettre une image de font 
 
 la nav - 
     ...
@@ -11,10 +12,17 @@ le footer -
     ...
 
 apropos -
-    ...
+    Quand est clicker sur un membre affiche les programme tv ou il appartient
+     - Quand est clické afiche un message au centre avec les programme tv et un bouton pour enlevé la popup
+    - Creation de fonction js coté front pour multiple utilisation
 
 programmetv - 
-    ...
+    Quand est cliqué sur un programme tv : affiche les membres en charge du programme
+    - Idem
 
 formulaireprogrammetv - 
     ...
+
+Ajout de lien des programmes tv dans la base de donné (ici youtube) 
+    utilisation de iframe
+    mettre le nombre de like

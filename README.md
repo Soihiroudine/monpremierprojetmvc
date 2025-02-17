@@ -60,6 +60,7 @@ Vous devez au préalable avoir créer la base de donnée `chainetv` et les table
 
 ## Base de donnée
 
+
 ```sql
 
 CREATE DATABASE chaintv;
@@ -71,7 +72,6 @@ CREATE TABLE membre (
     prenom VARCHAR(100) NOT NULL,
     travail VARCHAR(100) NOT NULL
 );
-
 CREATE TABLE programmetv (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(100) NOT NULL,
@@ -79,7 +79,6 @@ CREATE TABLE programmetv (
     date_diffusion DATE NOT NULL,
     heure_diffusion TIME NOT NULL
 );
-
 CREATE TABLE equipe (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(100) NOT NULL,

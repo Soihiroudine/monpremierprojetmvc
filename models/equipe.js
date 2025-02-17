@@ -23,6 +23,15 @@ class Equipe{
             callback(null, res);
         });
     }
+
+    getMembreProgramme(idProgramme, callback){
+        db.query("SELECT * FROM equipe WHERE id_programmetv = ?;", idProgramme, (err, res) => {
+            if (err) {
+                return callback(err, null);
+            }
+            callback(null, res);
+        });
+    }
 }
 
 module.exports = Equipe;

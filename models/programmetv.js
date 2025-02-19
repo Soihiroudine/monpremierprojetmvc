@@ -4,10 +4,10 @@ class ProgrammeTv{
     constructor(){}
 
     // Ajout de programme TV dans la base de données
-    addProgramme(name, description, dateDiffusion, heureDebut, callback) {
+    addProgramme(name, description, dateDiffusion, heureDebut, lienVideo, callback) {
         db.query(
-            "INSERT INTO programmetv(nom, description, date_diffusion, heure_diffusion) VALUES (?, ?, ?, ?);",
-            [name, description, dateDiffusion, heureDebut],
+            "INSERT INTO programmetv(nom, description, date_diffusion, heure_diffusion, lien) VALUES (?, ?, ?, ?, ?);",
+            [name, description, dateDiffusion, heureDebut, lienVideo],
             (err, res) => {
                 if(err) {
                     return callback(err, null);

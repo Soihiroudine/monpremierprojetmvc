@@ -1,0 +1,23 @@
+
+.programme {
+    padding: 1em;
+    margin: 1em 0;
+    display: flex;
+}
+.card {
+    text-align: center;
+    border: 1px solid #120125;
+    padding: 1em;
+    margin: 0.5em;
+}
+.card h5{
+    font-size: 1.5em;
+}
+.card p{
+    font-size: 1.2em;
+}
+
+.card iframe {
+    border-radius: 10px;
+    margin-right: 1em;
+}

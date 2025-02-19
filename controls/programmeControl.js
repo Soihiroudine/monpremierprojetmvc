@@ -6,14 +6,14 @@ class ProgrammeControl {
     }
 
     creationProgramme(req, res) {
-        const { nomProgramme, diffusion, heure_diffusion, description } = req.body;
+        const { nomProgramme, diffusion, heure_diffusion, description, lienVideo } = req.body;
 
-        if (!nomProgramme || !description || !diffusion || !heure_diffusion) {
+        if (!nomProgramme || !description || !diffusion || !heure_diffusion || !lienVideo) {
             console.log("Tous les champs sont requis");
             return res.status(400).send('Tous les champs sont requis');
         }
 
-        this.programme.addProgramme(nomProgramme, description, diffusion, heure_diffusion, (err) => {
+        this.programme.addProgramme(nomProgramme, description, diffusion, heure_diffusion, lienVideo, (err) => {
             if (err) {
                 console.log("Erreur lors de l'ajout");
                 return res.status(500).send('Erreur lors de l\'ajout');

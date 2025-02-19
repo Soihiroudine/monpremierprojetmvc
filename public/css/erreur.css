@@ -1,0 +1,23 @@
+.erreur-quatre-cent-quatre {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.erreur-quatre-cent-quatre h1 {
+    font-size: 3em;
+    color: #cb4335;
+}
+
+.erreur-quatre-cent-quatre p {
+    font-size: 1.5em;
+    color: #000;
+}
+
+.erreur-quatre-cent-quatre a {
+    font-size: 1.5em;
+    color: #cb4335;
+}
+
+.erreur-quatre-cent-quatre a:hover {
+    color: #a70707;
+}

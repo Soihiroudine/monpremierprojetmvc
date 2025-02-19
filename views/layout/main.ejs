@@ -7,6 +7,7 @@
     <title>Bold 13 - <%= title %></title>
 
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/programmetv.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer.css">
 
@@ -14,7 +15,12 @@
 </head>
 
 <body>
-    <%- include("../partials/navbar", {title : locals.title, user : user }) %>
+    <% try { %>
+        <%- include("../partials/navbar", {title : locals.title, user : user }) %>
+    <% } catch (e) { %>
+        <%- include("../404") %>
+    <% } %>
+
     <main class="container-fluid">
         <%- body %>
     </main>

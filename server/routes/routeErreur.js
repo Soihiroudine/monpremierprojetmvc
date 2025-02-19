@@ -1,5 +1,4 @@
 const express = require("express");
-const expressEjsLayouts = require("express-ejs-layouts");
 const router = express.Router();
 
 

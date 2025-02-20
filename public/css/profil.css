@@ -1,0 +1,32 @@
+.profil {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    background-color: #ffffff0f;
+    border-radius: 5px;
+}
+
+.profil .blockImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #fad7a0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profil section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.profil p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #595757; 
+}

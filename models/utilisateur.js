@@ -36,6 +36,16 @@ class ComptUtilisateur {
         });
     }
 
+    // Suppression de l'utilisateur depuis la base de données en fonction de l'id
+    deleteUtilisateur(id, callback) {
+        db.query("DELETE FROM utilisateur WHERE id = ?;", [id], (err, res) => {
+            if (err) {
+                return callback(err, null);
+            }
+            callback(null, res);
+        });
+    }
+
     
 }
 

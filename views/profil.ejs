@@ -1,9 +1,22 @@
-<section class="container ">
-    <h2>Profil</h2>
+<section class="container profil">
     <section>
-        <p>nom : <span><%= user.nom %></span></p>
-        <p>Prenom : <span><%= user.prenom %></span></p>
-        <p>Email : <span><%= user.email %></span></p>
-        <p>Date de naissance : <span><%= user.date_naissance %></span></p>
+        <span class="blockImage"></span>
+    </section>
+    
+    <section>
+        <section>
+            <h3>Informations personnelles</h3>
+            <p>Nom <span><%= user.nom %></span></p>
+            <p>Prenom <span><%= user.prenom %></span></p>
+            <p>Email <span><%= user.email %></span></p>
+            <p>Date de naissance <span><%= user.date_naissance %></span></p>
+        </section>
+        
+        <section class="btn-group">
+            <form action="/deleteUser" method="post">
+                <input type="hidden" name="id" value="<%= user.id %>">
+                <button class="btn btn-danger">supprimer profil</button>
+            </form>
+        </section>
     </section>
 </section>

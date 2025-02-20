@@ -2,17 +2,17 @@ const ComptUtilisateur = require("../models/utilisateur");
 const bycrypt = require("bcryptjs");
 
 
-class ComptUserControls{
-    constructor(){
+class ComptUserControls {
+    constructor() {
         this.utilisateur = new ComptUtilisateur();
     }
 
     // Création d'un utilisateur dans la base de données
-    creationUtilisateur(req, res){
-        const { nom, prenom, email, password, password2, dateNaissance} = req.body;
+    creationUtilisateur(req, res) {
+        const { nom, prenom, email, password, password2, dateNaissance } = req.body;
 
         // Verification que tous les champs sont remplis
-        if(!nom || !prenom || !email || !password || !dateNaissance) {
+        if (!nom || !prenom || !email || !password || !dateNaissance) {
             console.log("Tous les champs sont requis");
             return res.status(400).send('Tous les champs sont requis');
         }
@@ -21,12 +21,12 @@ class ComptUserControls{
         // Hashage du mot de passe
         if (password === password2) {
             passwordHash = bycrypt.hashSync(password, 10);
-        }else {
+        } else {
             console.log("Les mots de passe ne correspondent pas");
             return res.status(400).send('Les mots de passe ne correspondent pas');
         }
 
-        this.utilisateur.addUtilisateur(nom, prenom, email, dateNaissance, passwordHash,  (err) => {
+        this.utilisateur.addUtilisateur(nom, prenom, email, dateNaissance, passwordHash, (err) => {
             if (err) {
                 console.log("Erreur lors de l'ajout");
                 return res.status(500).send('Erreur lors de l\'ajout');
@@ -36,10 +36,10 @@ class ComptUserControls{
     }
 
     // Connexion d'un utilisateur
-    connexionUtilisateurs(req, res){
+    connexionUtilisateurs(req, res) {
         const { email, password } = req.body;
 
-        if(!email || !password) {
+        if (!email || !password) {
             console.log("Tous les champs sont requis");
             return res.status(400).send('Tous les champs sont requis');
         }
@@ -66,6 +66,24 @@ class ComptUserControls{
             res.redirect("/profil");
         });
     }
+
+    // suppression utilisateur
+    suppressionUtilisateur(req, res) {
+        const id  = req.body.id;
+
+        this.utilisateur.deleteUtilisateur(id, (err) => {
+            if (err) {
+                console.log("Erreur lors de la suppression");
+                return res.status(500).send("Erreur lors de la suppression");
+            }
+            console.log("Suppression réussie");
+            // destruction de la session
+            req.session.destroy();
+            res.redirect("/connexion");
+        });
+        
+    }
+    
 
 }
 

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const comptUserControls = require('../../controls/comptUserControls');
 
 // route [ Profil ]
 router.get("/profil", (req, res) => {
@@ -20,5 +21,7 @@ router.get('/logout', (req, res) => {
       res.redirect("/connexion");
     });
 });
+
+router.post("/deleteUser", comptUserControls.suppressionUtilisateur.bind(comptUserControls));
 
 module.exports = router;    // On exporte le router

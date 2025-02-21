@@ -15,8 +15,8 @@
 
         <% if (user) { %>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/profil"><span class="glyphicon glyphicon-user"></span> <%= user.nom %></a></li>
-                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <li class="utilisateur"><a href="/profil"><span class="glyphicon glyphicon-user"></span> <%= user.nom %></a></li>
+                <li class="logout"><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             </ul>
         <% } else { %>
         <ul class="nav navbar-nav navbar-right">

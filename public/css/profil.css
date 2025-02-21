@@ -1,16 +1,34 @@
-.profil {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: center;
-    box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.1);
-    padding: 1em;
-    background-color: #ffffff0f;
-    border-radius: 5px;
+/* Manipulation du nav de quand un utilisateur est connecté */
+.utilisateur {
+    border-bottom: 4px solid #fad7a0;
+    background-color:  #895604;
 }
 
+.logout {
+    border-bottom: 4px solid #e74c3c;
+    background-color: #641e16;
+}
+
+.profil {
+    min-height: 100%;
+    border: 2px solid #595757;
+}
+
+.col-md-6 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profil .profilImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #595757;
+}
 .profil .blockImage {
     width: 200px;
     height: 200px;
@@ -19,14 +37,12 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.profil section {
-    display: flex;
-    flex-direction: column;
-    margin: 0 20px;
-}
-
 .profil p {
     font-size: 1.2em;
     margin: 10px 0;
     color: #595757; 
+}
+
+.profil .btn {
+    margin: 10px 20px;
 }
